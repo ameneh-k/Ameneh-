@@ -1,0 +1,131 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the number of frequency in string is:[(' ', 0), ('a', 1), ('e', 2), ('h', 0), ('i', 0), ('k', 0), ('m', 1), ('n', 0), ('z', 0)]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#count a number of character in a string\n",
+    "myString = \"ameneh kazemi\"\n",
+    "#make a dictionary \n",
+    "frequency = {}\n",
+    "#search in string and check how many character are frequent\n",
+    "for c in myString: \n",
+    "    if c in frequency:\n",
+    "        frequency[c] += 1\n",
+    "    else:\n",
+    "        frequency[c] = 0\n",
+    "#list the frequent word in descending format using operator module\n",
+    "import operator\n",
+    "freq = sorted(frequency.items(),key=operator.itemgetter(0))\n",
+    "#uncomment to reverse the order\n",
+    "#freq = sorted(frequency.items(),key=operator.itemgetter(0),reverse= True)\n",
+    "print(\"the number of frequency in string is:\" +  str(freq) )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "what is your sentence:  what I your name\n",
+      "what 1\n",
+      "I 1\n",
+      "your 1\n",
+      "name 1\n"
+     ]
+    }
+   ],
+   "source": [
+    "#count occurrence of a word in a given sentence\n",
+    "#get the sentence\n",
+    "myString = input(\"what is your sentence:  \")\n",
+    "# seperate each word\n",
+    "myString = myString.split(\" \")\n",
+    "#make a list\n",
+    "string2 = []\n",
+    "#search in mystring and if the word does not exist in string2 add to it and loop in mystring\n",
+    "for i in myString:\n",
+    "    if i in myString:\n",
+    "        if i not in string2:\n",
+    "            string2.append(i)\n",
+    "#count the unique word from string2 and count them in mystring and print the result           \n",
+    "for i in range(0, len(string2)):\n",
+    "    print(string2[i], myString.count(string2[i]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "ameneh\n",
+      "mehdi\n",
+      "sosha\n",
+      "zahra\n"
+     ]
+    }
+   ],
+   "source": [
+    "#print unique words in a comma seperated set of words\n",
+    "#make a set of word \n",
+    "myString = \"ameneh,ziba,zahra,mehdi,sosha,ziba\"\n",
+    "#seperate them based on comma\n",
+    "words = myString.split(\",\")\n",
+    "#sort them\n",
+    "words = sorted(words)\n",
+    "#count tehm\n",
+    "for i in words:\n",
+    "    if myString.count(i) == 1:\n",
+    "         print(i)\n",
+    "    else:\n",
+    "        pass"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
